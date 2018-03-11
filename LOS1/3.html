@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+// var a={name :"Mike",age:20};
+// console.log(a instanceof Object);
+// var b=[12,34,{},""];
+// console.log(b instanceof Object);
+// var Person=function(){
+// 	//...
+// };
+// var p1=new Person();
+// console.log(p1 instanceof Person);
+// function foo(){
+// 	var n=10;
+// 	var m=true;
+// 	var str="Hello World";
+// 	var obj={value:"Hello World"};
+// };
+// foo();
+// (function (){
+// 	var str_a="a";
+// 	var str_b=str_a;
+// 	str_b="b";
+// 	console.log(str_a,str_b);
+// 	var obj_a={v:"a"};
+// 	var obj_b=obj_a;
+// 	obj_b.v="b";
+// 	console.log(obj_a,obj_b);
+// 	obj_b={v:"c"};
+// 	console.log(obj_a,obj_b);
+// }());
+// var obj_c={x1:2,y1:3};
+// var a =123;
+// function foo1(x){
+// 	x = 345;
+// }
+// foo1(a);
+// console.log(a);
+
+// //
+// var a ={y:123};
+// function foo2(x){
+// 	x.y = 345;
+// }
+// foo2(a);
+
+// console.log(a.y);
+
+// //
+// var a ={y:123};
+// function foo3(x){
+// 	x.y = 345;
+// 	x = {y:456};
+// }
+// foo3(a);
+// console.log(a.y);
+
+// //
+// var a ={y:123};
+// function foo4(x){
+//     x = {y:456};	
+//     x.y = 345;	
+// }
+// foo4(a);
+// console.log(a.y);
+(function () { //立即执行表达式开始
+//基本（原始）数据类型与引用（对象）类型的区别1 判等不同
+var a1 = 100;
+var b1 = 100;
+console.log(a1 == b1);
+console.log(a1 === b1);
+
+//
+var a2 = new Number(200);
+var b2 = new Number(200);
+console.log(a2 == b2);
+console.log(a2 === b2);
+
+//
+var a3 = new Number(200);
+var b3 = a3;
+console.log(a3 == b3);
+console.log(a3 === b3);
+
+b3 = new Number(200);
+console.log(a3 === b3);
+
+</script>
+</html>
