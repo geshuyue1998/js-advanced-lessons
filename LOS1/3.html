@@ -68,27 +68,63 @@
 // }
 // foo4(a);
 // console.log(a.y);
-(function () { //立即执行表达式开始
-//基本（原始）数据类型与引用（对象）类型的区别1 判等不同
-var a1 = 100;
-var b1 = 100;
-console.log(a1 == b1);
-console.log(a1 === b1);
+// (function () { 
+// var a1 = 100;
+// var b1 = 100;
+// console.log(a1 == b1);
+// console.log(a1 === b1);
 
-//
-var a2 = new Number(200);
-var b2 = new Number(200);
-console.log(a2 == b2);
-console.log(a2 === b2);
+// //
+// var a2 = new Number(200);
+// var b2 = new Number(200);
+// console.log(a2 == b2);
+// console.log(a2 === b2);
 
-//
-var a3 = new Number(200);
-var b3 = a3;
-console.log(a3 == b3);
-console.log(a3 === b3);
+// //
+// var a3 = new Number(200);
+// var b3 = a3;
+// console.log(a3 == b3);
+// console.log(a3 === b3);
 
-b3 = new Number(200);
-console.log(a3 === b3);
+// b3 = new Number(200);
+// console.log(a3 === b3);
+// }());
+var a1 = 20;
+var a2 = 23.4;
+console.log(parseInt(a2));
+console.log(parseFloat("23.456xy"));
+console.log(parseInt === window.parseInt);
+console.log(parseFloat === window.parseFloat);
 
+console.log(Math.ceil(a2));
+console.log(Math.floor(a2));
+console.log(Math.round(a2));
+a3 = 5e2;
+console.log(a3);
+console.log(typeof Math);
+
+var x = Number("xis021");
+console.log(x);
+isNaN(x);
+typeof NaN;
+
+console.log(Math.log(-1));
+console.log(Math.acos(2));
+console.log(NaN === NaN);
+
+
+
+var y1 = 2/0;
+console.log(y1);
+var y2 = -2/0;
+console.log(y2);
+isFinite(y2);
+isFinite(23);
+
+
+var z1 = 1/Infinity;
+console.log(z1);
+var z2 = -1/Infinity;
+console.log(z2);
 </script>
 </html>
