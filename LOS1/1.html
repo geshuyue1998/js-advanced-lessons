@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+console.log(a);
+
+
+function foo(x,y){
+	console.log(x,y);
+	
+}
+foo(1);
+
+
+function foo(x,y){
+	console.log(x,y);
+	
+}
+
+
+undefined
+function fee(){}
+undefined
+function fee(){}
+var feeReturnValue=fee();
+console.log(feeReturnValue);
+
+console.log(typeof null);
+VM121:1 object
+
+
+var obj={x:1,y:2};
+console.log(obj.proto===Array.prototype);
+console.log(Object.prototype);
+VM198:2 false
+
+var obj={x:1,y:2};
+console.log(obj.proto===Array.prototype);
+console.log(Object.prototype);
+VM198:2 false
+VM198:3 {constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}
+undefined
+var arr
+undefined
+var arr=[1,2,3,4,5];
+console.log(arr.proto===Array.prptptype);
+
+VM235:2 true
+undefined
+var obj={x:1,y:2};
+console.log(obj.proto===Object.prototype);
+console.log(Object.prototype);
+VM236:2 false
+VM236:3 {constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}
+undefined
+var obj = {x:1,y:2};
+console.log(obj.__proto__ === Object.prototype);
+console.log(Object.prototype);
+VM237:2 true
+VM237:3 {constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}
+undefined
+function foo(){
+}
+
+undefined
+function foo(){
+	console.log("foo function!");
+
+};
+foo._proto_===Function.prototype):
+
+
+function foo(){
+	console.log("foo function!");
+
+};
+foo._proto_===Function.prototype);
+foo._proto_._proto_===Object.Prototype);
+
+
+function foo(){
+	console.log("foo function!");
+
+}; 
+console.log(foo._proto_===Function.prototype);
+console.log(foo._proto_._proto_===Object.Prototype);
+console.log(obj instanceof Object);
+console.log(arr instanceof Object);
+console.log(foo instanceof Object);
+console.log( ==window.foo);
+
+var obj = {x:1,y:2};
+console.log(obj.__proto__ === Object.prototype);
+console.log(Object.prototype);
+
+var arr = [1,2,3,4,5];
+console.log(arr.__proto__ === Array.prototype);
+console.log(Array.prototype);
+console.log(arr.__proto__.__proto__ === Object.prototype);
+
+function foo() { 
+    console.log("foo function!");
+};
+console.log(foo.__proto__ === Function.prototype);
+console.log(foo.__proto__.__proto__ === Object.prototype);
+
+console.log(obj instanceof Object);
+console.log(arr instanceof Object);
+console.log(foo instanceof Object);
+console.log(foo === window.foo);
+
+
+for(var k in obj){
+    console.log(k,obj[k]);
+}
+
+console.log(Object.keys(obj));
+
+console.log("x" in obj);
+for(var k in foo){
+    console.log(k,foo[k]);
+}
+console.log("call" in foo);
+console.log("apply" in foo);
+console.log("arguments" in foo);
+
+</script>
+</html>
