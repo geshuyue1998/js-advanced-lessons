@@ -128,5 +128,90 @@ console.log("call" in foo);
 console.log("apply" in foo);
 console.log("arguments" in foo);
 
+//包装对象
+var a=123;
+var b=new Number(a);
+console.log(a==b);//true
+console.log(a===b);//flase
+ var str="abcde";
+ console.log(str.length);
+ str.length=1;
+ console.log(str.length,str);
+var arr=[1,2,3,4];
+console.log(arr.length);
+arr.length=1;
+console.log(arr.length,arr);
+
+
+console.log(Boolean(undefined));
+console.log(Boolean(null));
+console.log(Boolean(0));
+console.log(Boolean(NaN));
+console.log(Boolean(1));
+console.log(Boolean(""));
+console.log(Boolean("abc"));
+console.log(Boolean({}));
+
+if(new Boolean(false)){
+	console.log("执行");
+
+}
+
+
+console.log(Number(undefined));
+console.log(Number(null));
+console.log(Number(true));
+console.log(Number(false));
+console.log(Number(""));
+console.log(Number("abc"));
+console.log(Number("123.456xx"));
+console.log(Number("32343,345xx"));
+console.log(Number({x:1,y:2}));
+console.log(parseFloat("123.345xx"));
+console.log(parseFloat("32343,323xx"));
+console.log(parseInt("123.12xx"));
+console.log(parseInt("43332,45xx"));
+
+console.log(String(undefined));
+console.log(String(null));
+console.log(String(true));
+console.log(String(false));
+console.log(String(0));
+console.log(String(234));
+console.log(String({x:1,y:2}));
+
+var a=3;
+var b=4;
+console.log(typeof(a>b),a>b);
+console.log(typeof(a<b),a<b);
+console.log(typeof(a==b),a==b);
+
+var c="img"+3+".jpg";
+var d="23"-5;
+console.log(c,d);
+
+var e=!123;
+var f=!!23;
+var a=!!0;
+var c=!!"";
+var d=!!"abc";
+var w=!!undefined;
+var g=!!{};
+console.log(e,f,a,c,d,w,g);
+var e=!123;
+var f=!23;
+var a=!0;
+var c=!"";
+var d=!"abc";
+var w=!undefined;
+var g=!{};
+console.log(e,f,a,c,d,w,g);
+
+
+var h={x:1};
+if(h){
+	console.log("h:",h);
+}
 </script>
+
 </html>
