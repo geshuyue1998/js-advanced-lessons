@@ -1,0 +1,46 @@
+//思考+=会转变成字符串类型还是数字类型
+demo13
+==会进行隐式类型转换
+console.log(2||4);
+console.log(0||4);
+console.log({x:2}||{name:"Jack"});
+console.log(null||"hello");
+console.log({}||"world");
+console.log(2&&4);
+console.log(0&&4);
+console.log({x:2}&&{name:"Jack"});
+console.log(null&&"hello");
+console.log({}&&"world");
+//函数方法
+var max=new Function("a","b","return a>b?a:b");
+max(2,3);
+var str=function max(a,b){
+	return a>b?a:b;
+}
+max(2,3);
+function max(a,b){
+	return a>b?a:b;
+}
+max(2,3);
+typeof Function;
+function foo(){
+	"use strict"
+	console.log("foo");
+}
+foo();
+foo==window.foo;
+VM77:3 foo
+true
+
+
+var x=45;
+var text=function(){
+	console.log("this.x");
+
+}
+var obj={
+	x=23;
+};
+obj.text=text;
+obj.text();
+text();
