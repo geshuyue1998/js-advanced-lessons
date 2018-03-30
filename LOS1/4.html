@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+var a=34;
+if(a=45){
+	console.log("是否会输出");
+}
+function max(a,b){
+	return a>b?a:b;
+};
+max(2,3);
+
+var max=function(a,b){
+	return a>b?a:b;
+};
+max(2,3);
+var max=new Function("a","b","return a>b?a:b")
+max(2,3);
+
+objA={name:"AA"};
+objB={name:"BB"};
+objA.foo=function(){
+	console.log(this.name);
+};
+objA.foo();
+objA.foo.call(objB);
+
+function text(){
+	console.log(arguements);
+	console.log(test.arguements==arguements,arguements);
+	console.log(arguements.length);
+	console.log(typeof arguements);
+	console.log(arguements instanceof Array);
+	console.log(arguements instanceof Object);
+	console.log(Array.prototype.slice.call( arguements));	
+	var s="";
+	for(var i=0;i<arguements.length;i++){
+		s+=arguements[i];
+	}
+	return s;
+
+}
+var sum=function(a,b,c){
+	b=b||4;
+	c==c||5;
+	return a+b+c;
+};
+console.log(sum(1,2,3));
+console.log(sum(1,2));
+console.log(sum(1));
+	//3.26  函数对象
+}
+}
+}
+
+}
+函数对象类型是function
+function foo(){};
+console.log(foo);
+console.log(typeof foo);
+console.log(typeof Function);
+console.log(typeof Array);
+console.log(typeof Date);
+console.log(typeof Error);
+console.log(typeof Math);
+console.log(typeof JSON);
+//创建一个函数对象
+console.log(typeof new Function());
+console.log(typeof new Array());
+console.log(typeof new Date());
+
+console.log(Function instanceof Function);
+console.log(Function instanceof Object);
+//既然是函数一定是对象
+console.log(Array instanceof Function);
+//Array是内置函数对象，也就也是对象
+console.log(Array instanceof Object);
+console.log();
+var a=new Array(5);//创建一个长度为五的数组
+var b=new Array("5");//创建一个内容为5的数组
+function foo(x,y,z){}//函数长度时形参数量
+(function(n){
+	
+})(n)//不写函数名，立即执行
+
+//prototype
+var a ={};
+a;
+空对象也有自己的原型
+ Object
+ Object instanceof Function;
+ Object._proto_===Function.prototype
+ //object函数原型是function
+
+高阶函数
+function add(x,y,f){
+	return f(x)+f(y);
+}
+add(2,3,function(z){return z*z});
+add(2,-3,Math.abs);
+add(2,3,Math.sqrt);
+
+function foo(x,y,c1,c2){
+	return 2*c1(x)-3*c2(y);
+}
+function f1(x){return x+1;}
+function f2(x){return x-1;}
+function f3(x){return x*x;}
+foo(1,1,f1,f3);
+foo(1,1,f1,f2);
+foo(1,1,f2,f1);
+
+
+//3.29
+var obj1={
+	x:12
+	foo:function (y){
+		console.log(this,x,y);
+	}
+}
+var obj2={
+	x:34;
+}
+//绑定
+var fee=obj.foo.bind(obj2);
+fee();
+fee("yy")
+
+var obj={x:23};
+var fun1=function(){
+	return function fun2(){
+		return this.x;
+	}
+};
+obj.fun3=fun1;
+obj.fun4=fun1();
+console.log(obj.fun3());
+console.log(obj.fun3()());
+console.log(obj.fun4());
+
+//demo9
+console.log(a);
+var a=1;
+console.log(a);
+
+
+console.log(a,b);
+var b=23;
+console.log(a,b);
+var a=b;
+console.log(a,b);
+
+foo();
+function foo(){
+	cosole.log("f_1");
+}
+function foo(){
+	cosole.log("f_2");
+}
+
+AA();
+function AA(){
+	console.log("AA_1");
+}
+var AA=function AA(){
+	console.log("AA_2");
+};
+AA();
+
+var name="jack";
+function ecoh(){
+	console.log(name);
+}
+function foo(){
+	var name="Bill";
+	ecoh();
+}
+foo();
+
+undefined
+
+//es5里面没有块作用域
+var x="outside f1";
+var f1=function(){
+	console.log(x);
+};
+f1();
+console.log(x);
+
+var f2=function(){
+	var y="jubu";
+	//y="quanju";
+	console.log(y);
+};
+f2();
+console.log(y)
+
+if(true){
+    var z = 23;
+}
+console.log(z);
+
+
+if(false){
+    var z = 23;
+}
+console.log(z);
+
+if(true){
+	var i=0;
+}
+function foo(){
+	console.log("j:",j);
+	var j=10;
+	console.log("j:",j);
+}
+foo();
+console.log("i:",i);
+console.log("j:",j);
+
+</script>
+</html>
+
