@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+var a=10;
+	b=20;
+function fn(){
+	var a=100;
+	c=200;
+	function bar(){
+	var a=500;
+		d=600;
+	console.log(a,b,c,d);		
+	}
+	bar();
+	
+}
+fn();
+VM58:9 500 20 200 600
+undefined
+var a=10;
+	b=20;
+function fn(){
+	var a=100;
+	c=200;
+	function bar(){
+	var a=500;
+		d=600;
+		
+	}
+	bar();
+	console.log(a,b,c,d);	
+}
+fn();
+
+var a=10;
+	b=20;
+function fn(){
+	var a=100;
+	c=200;
+	function bar(){
+	var a=500,
+		d=600;
+		
+	}
+	bar();
+	console.log(a,b,c,d);	
+}
+fn();
+
+var scope="g";
+function foo(){
+	var scope="l";
+	return new Function("console.log(scope);")
+}
+foo()();
+
+var scope ="global";
+function checkscope(){
+	var scope="local";
+	rerurn function(){
+		return scope;
+	};
+}
+console.log(checkScope()());
+local
+var scope ="global";
+function checkScope(){
+	var scope ="local";
+	return new Function("return scope;")
+}
+console.log(checkScope()());
+global
+
+
+(function(){
+	var a=2,b=3;
+	if(a<b){
+		var userId=234;
+	}
+})
+
+</html>
