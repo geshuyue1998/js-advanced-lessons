@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>(function() {
+    console.log("111");
+})();//没有分号的话会报错
+(function () {
+    console.log("222");
+})()
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+(function max(x,y){
+	console.log("the max is",x<y?x:y);
+})(2,3);
+(function max(x,y){
+	console.log("111");
+})();
+!function(x,y){
+    return x==y?true:false; 
+}("5",5);
+!function(x,y){
+    return x===y?true:false; 
+}("5",5);
+(function() {
+    console.log("111");
+})();//没有分号的话会报错
+(function () {
+    console.log("222");
+})()
+/*立即执行表达式要记得加分号，不是一个独立的分隔语句，是表达式*/
+function f(){
+	var getNumFuncs=[];
+	for(var i=0;i<10;i++){
+		getNumFuncs[i]=function(){
+			return i;
+		};
+	}
+	return getNumFuncs;
+}
+var tmp=f();
+tmp[3]();
+function f(){
+	var getNumFuncs=[];
+	for(var i=0;i<10;i++){
+		(function(j){
+			getNumFuncs[j]=function(){
+				return j;
+			};
+		})(i);
+	}
+	return getNumFuncs;
+
+}
+var tmp=f();
+tmp[3]();
+for (var i = 0; i < 5; i++) {
+	console.log("xx:",i);
+    (function(j) {  // j = i
+        setTimeout(function() {
+            console.log(new Date, j);
+        }, 1000*i);
+    })(i);
+}
+</script>
+</html>
