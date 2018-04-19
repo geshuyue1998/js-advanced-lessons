@@ -210,4 +210,111 @@ var fee=foo(2);
 fee(10);
 fee(10);
 fee(10);
+
+
+
+
+//对象综述
+console.log(typeof Array)
+console.log(typeof Math)
+console.log(typeof Date)
+console.log(typeof JSON)
+console.log(typeof String)
+var i = new String("str");          // String Object
+var h = new Number(1);              // Number Object
+var g = new Boolean(true);          // Boolean Object
+var j = new Object({name : "Tom"}); // Object Object
+var k = new Array([1, 2, 3, 4]);    // Array Object
+var l = new Date();                 // Date Object
+var m = new Error();
+var n = new Function();
+var o = new RegExp("\\d");
+
+//这些都是构造函数，都是对象
+
+console.log(new Function() instanceof Function)//实例化一个函数
+console.log(new(new Function()) instanceof Function)
+console.log(new(new Function()) instanceof Object)
+//new function是一个对象就不是函数了，改成object就是true
+
+//setget方法注意不要产生二义性，没有set方法只有get方法就变成了只读属性（优先级get高，就返回了this_x）
+var o={
+	_x:1.0,
+    get x(){
+		return this._x;
+},
+// 	set x(val){
+// 		this._x=val;
+// }
+
+};
+console.log(o.x);
+o.x=2;
+console.log(o.x,o._x);
+ var p1={
+ 	_name:"Jack",
+ 	_age:23,
+ 	set age(val){
+ 		if(val>0&&val<150){
+ 			this._age=val;
+ 		}else{
+ 			console.log("请设置正常年龄");
+ 		}
+ 	},
+ 	get age(){
+ 		return this._age;
+ 	}
+
+ };
+ p1.age=178;
+ console.log(p1.age);
+var o={
+	x:12
+}
+o._proto_===Object.prototype;
+var o2=Object.create(o);
+o2._proto_===o;
+var Person =funciton(name){
+	this.name = name;
+}
+var p=new person("abc");
+p._proto_===Person.prototype;
+
+function Person(name,age){
+    this.name = name;
+    this.age = age;
+}
+Person.prototype.sayName = function(){
+    console.log("hello,i'm",this.name,this.age,"years old");
+};
+var person1 = new Person("Mike",21);
+person1.sayName();
+var obj={
+	x1:12,x1:12,x1:12,
+
+for(var i=1;i<4;i++){
+	console.log(obj["x"+i]);
+}
+
+var obj={
+	num:10,
+	str:"Hi",
+	show:function(){
+		return this.str;
+	}
+};
+console.log(obj.num);
+console.log(obj.str);
+console.log(obj.show());
+console.log(obj._proto_);
+console.log(obj._proto_===Object.prototype);
+
+var newObj=Object.create(obj);
+newObj.age=23;
+console.log(newObj.num);
+console.log(newObj.str);
+console.log(newObj.show());
+console.log(newObj.age);
+console.log(newObj._proto_);
+console.log(newObj._proto_===obj);
 </html>
