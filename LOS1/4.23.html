@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+//创建对象的三种方法
+var obj1={x:1};
+var obj2=Object.create(obj1);
+obj2.y=3;
+var Obj3=function(){}
+var obj3=new Obj3();
+console.log(obj1,obj2,obj3);
+
+//首字母大写
+
+var b=new Object();
+b._proto_==Object.prototype
+
+var empty={};
+var obj2=Object.create(empty,{
+	x:{value:1},y:{value:2,enumerable:true}
+});
+console.log(obj2);
+console.log(obj2.hasOwnProperty("x"));
+
+var obj={
+	num:10;
+	str:"Hi",
+	show:function(){
+		return this.str;
+	}
+};
+console.log(obj._proto_===Object.prototype);
+var newObj=Object.create(obj);
+var newObj2=Object.create(obj);
+newObj.age=23;
+console.log(newObj._proto_===obj);
+console.log(newObj2._proto_===obj);
+console.log(newObj._proto_._proto_);
+console.log(newObj._proto_._proto_._proto_);
+
+//原型链
+var proObj={z:3};
+var obj=Object.create(proObj);
+obj.x=1;
+obj.y=2 ;
+console.log(obj.x);
+console.log(obj.y);
+console.log(obj.z);
+console.log("z" in obj);
+console.log(obj.hasOwnProperty("z"));
+
+//demo4
+function Person(age,name){
+	this.name=name;
+	this.age=age;
+}
+Person.prototype.sayHi=function(){
+	console.log("Hi,i'm"+this.name);
+
+};
+var p1=new Person(20,"Jack");
+console.log(p1.name);
+console.log(p1.age);
+p1.sayHi();
+
+function Person(name){
+	this.name=name;
+	this.age=21;
+}
+Person.prototype.sayHi=function(){
+	console.log("hi,i'm",this.name,this.age,"year")
+};
+var p1=new Person("Mike");
+console.log(p1.name);
+console.log(p1.age);
+p1.sayHi;
+
+function Myobj(){}
+Myobj.prototype.z=3;
+var obj=new Myobj();
+obj.x=1;
+obj.y=2;
+console.log(obj.x);
+console.log(obj.y);
+console.log(obj.z);
+console.log("z" in obj);
+console.log(obj.hasOwnProperty("z"));
+
+
+</script>
+</html>
