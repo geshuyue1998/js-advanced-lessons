@@ -62,3 +62,26 @@ function foo(){
 }
 foo(3,2,4);
 //
+var arr1=[2,5,8]
+arr1.forEach(function(a){
+	console.log(a.this);
+});
+console.log(arr1);
+
+var arr1=[2,5,8];
+var arr2=[1,6,7];
+arr1.forEach(function(a,i){
+	console.log(a,i,this);
+},arr2);
+console.log(arr1);
+
+var arr1=[2,5,8];
+var arr2=[1,6,7];
+var arr3=[]
+arr1.forEach(function(a,i){
+	console.log(a,i,this);
+	arr3[i]=a>arr2[i]?a:arr2[i]
+},arr2);
+console.log(arr3);
+//some只要含有偶数直接返回true，不继续执行
+// every只要含有奇数，直接返回false，不继续执行
