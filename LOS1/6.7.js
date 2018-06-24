@@ -45,7 +45,7 @@ console.log(foo3);
 null==undefined//true
 null===undefined//false
 function f2(){
-    return 2;
+    return 2;  
 }
 let [x7=f2()]=[1];
 console.log(x7);//1
@@ -110,3 +110,44 @@ console.log(len);
 
 let{toString:s1}=123;
 console.log(s2);
+
+var [x,y,z,w]=["a","c","d","b"];
+[x,y,z,w]=[x,w,y,z];
+console.log(x,y,z,w);
+
+function example(){
+    return [1,2,3];
+}
+var [a,b,c]=example();
+console.log(a,b,c);
+
+var josnData={
+    id:42,
+    status:"OK",
+    data:[867,5309]
+};
+let {id,status,data:number}=josnData;
+console.log(id,status,number);
+
+var s='Hello world!';
+s.startsWith('Hello')
+s.endsWith('!')
+var reg1=/^hello/gi;
+var reg2=/\bhello/gi;
+console.log(reg2);
+console.log(reg1);
+
+isNaN("xx");
+function foo(){
+    var arr=Array.from(arguements);
+    // console.log(arguements instanceof Object)
+    // console.log(arguements instanceof Array)
+    // console.log(arguements.constructor)
+    // var arr=Array.prototype.slice.call(arguements);
+    console.log(arr);
+}
+foo(1,2,3,"4","5")
+
+for(let elem of['a','b'].values()){
+    console.log(index);
+}
